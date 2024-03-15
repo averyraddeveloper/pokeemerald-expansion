@@ -193,7 +193,7 @@ BerryTree_Text_WantToPlant:
 	.string "Want to plant a BERRY?$"
 
 BerryTree_Text_PlantedOneBerry:
-	.string "{PLAYER} planted one {STR_VAR_1} in\n"
+	.string "You planted one {STR_VAR_1} in\n"
 	.string "the soft, loamy soil.$"
 
 BerryTree_Text_BerryGrowthStage1:
@@ -224,10 +224,10 @@ BerryTree_Text_WantToPick:
 	.string "{STR_VAR_1}?$"
 
 BerryTree_Text_PickedTheBerry:
-	.string "{PLAYER} picked the {STR_VAR_2} {STR_VAR_1}.$"
+	.string "You picked the {STR_VAR_2} {STR_VAR_1}.$"
 
 BerryTree_Text_PutAwayBerry:
-	.string "{PLAYER} put away the {STR_VAR_1}\n"
+	.string "You put away the {STR_VAR_1}\n"
 	.string "in the BAG's BERRIES POCKET.\p"
 	.string "The soil returned to its soft and\n"
 	.string "loamy state.$"
@@ -237,7 +237,7 @@ BerryTree_Text_BerryPocketFull:
 	.string "The {STR_VAR_1} couldn't be taken.$"
 
 BerryTree_Text_BerryLeftUnpicked:
-	.string "{PLAYER} left the {STR_VAR_1}\n"
+	.string "You leave the {STR_VAR_1}\n"
 	.string "unpicked.$"
 
 BerryTree_Text_WantToWater:
@@ -245,7 +245,7 @@ BerryTree_Text_WantToWater:
 	.string "WAILMER PAIL?$"
 
 BerryTree_Text_WateredTheBerry:
-	.string "{PLAYER} watered the {STR_VAR_1}.$"
+	.string "You watered the {STR_VAR_1}.$"
 
 BerryTree_Text_PlantIsDelighted:
 	.string "The plant seems to be delighted.$"
