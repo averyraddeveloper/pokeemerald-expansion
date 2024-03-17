@@ -1086,7 +1086,7 @@ void DrawHeaderBox(void)
     else
         dst = gStringVar1;
 
-    if (GetSetItemObtained(item, FLAG_GET_OBTAINED))
+    if (GetSetItemObtained(item, FLAG_GET_OBTAINED) && !I_DISPLAY_HEADER)
     {
         ShowItemIconSprite(item, FALSE, handleFlash);
         return; //no box if item obtained previously
@@ -1113,7 +1113,7 @@ void HideHeaderBox(void)
 {
     DestroyItemIconSprite();
 
-    if (!GetSetItemObtained(gSpecialVar_0x8006, FLAG_GET_OBTAINED))
+    if (!GetSetItemObtained(gSpecialVar_0x8006, FLAG_GET_OBTAINED) || I_DISPLAY_HEADER)
     {
         //header box only exists if haven't seen item before
         GetSetItemObtained(gSpecialVar_0x8006, FLAG_SET_OBTAINED);
@@ -1143,7 +1143,7 @@ static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash)
         spriteId2 = AddItemIconSprite(ITEM_TAG, ITEM_TAG, item);
     if (iconSpriteId != MAX_SPRITES)
     {
-        if (!firstTime)
+        if (!firstTime && !I_DISPLAY_HEADER)
         {
             //show in message box
             x = 213;
