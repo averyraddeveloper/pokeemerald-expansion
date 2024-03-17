@@ -1078,3 +1078,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/VaultPlayerBedroom/scripts.inc"
 
 	.include "data/maps/PorytilesTestMap/scripts.inc"
+
+	.include "data/maps/VaultCorridor/scripts.inc"

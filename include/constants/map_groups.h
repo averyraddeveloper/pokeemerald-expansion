@@ -591,6 +591,12 @@
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (33 << 8))
 
-#define MAP_GROUPS_COUNT 34
+// gMapGroup_TownsAndRoutes1
+#define MAP_VAULT                (0 | (34 << 8))
+#define MAP_VAULT_PLAYER_BEDROOM (1 | (34 << 8))
+#define MAP_PORYTILES_TEST_MAP   (2 | (34 << 8))
+#define MAP_VAULT_CORRIDOR       (3 | (34 << 8))
+
+#define MAP_GROUPS_COUNT 35
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

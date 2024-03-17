@@ -4410,6 +4410,46 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_VAULT",
+      "name": "Vault_Layout",
+      "width": 25,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Vault/border.bin",
+      "blockdata_filepath": "data/layouts/Vault/map.bin"
+    },
+    {
+      "id": "LAYOUT_VAULT_PLAYER_BEDROOM",
+      "name": "VaultPlayerBedroom_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/VaultPlayerBedroom/border.bin",
+      "blockdata_filepath": "data/layouts/VaultPlayerBedroom/map.bin"
+    },
+    {
+      "id": "LAYOUT_PORYTILES_TEST_MAP",
+      "name": "PorytilesTestMap_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PorytilesPrimaryTest",
+      "secondary_tileset": "gTileset_BattleArena",
+      "border_filepath": "data/layouts/PorytilesTestMap/border.bin",
+      "blockdata_filepath": "data/layouts/PorytilesTestMap/map.bin"
+    },
+    {
+      "id": "LAYOUT_VAULT_CORRIDOR",
+      "name": "VaultCorridor_Layout",
+      "width": 14,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/VaultCorridor/border.bin",
+      "blockdata_filepath": "data/layouts/VaultCorridor/map.bin"
     }
   ]
 }
