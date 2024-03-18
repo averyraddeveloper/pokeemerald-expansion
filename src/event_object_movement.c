@@ -8981,3 +8981,11 @@ bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *object
     sprite->sActionFuncId = 1;
     return TRUE;
 }
+
+bool8 MovementAction_EmoteSleeping_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_SLEEPING_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}

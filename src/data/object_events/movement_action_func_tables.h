@@ -157,6 +157,7 @@ u8 MovementAction_SetInvisible_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_SetVisible_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_EmoteExclamationMark_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_EmoteQuestionMark_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_EmoteSleeping_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_EmoteHeart_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_RevealTrainer_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_RevealTrainer_Step1(struct ObjectEvent *, struct Sprite *);
@@ -422,6 +423,7 @@ u8 (*const gMovementActionFuncs_FlyUp[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_FlyDown[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteX[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteDoubleExclMark[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteSleeping[])(struct ObjectEvent *, struct Sprite *);
 
 u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *) = {
     [MOVEMENT_ACTION_FACE_DOWN] = gMovementActionFuncs_FaceDown,
@@ -584,6 +586,7 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_FLY_DOWN] = gMovementActionFuncs_FlyDown,
     [MOVEMENT_ACTION_EMOTE_X] = gMovementActionFuncs_EmoteX,
     [MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK] = gMovementActionFuncs_EmoteDoubleExclMark,
+    [MOVEMENT_ACTION_EMOTE_SLEEPING] = gMovementActionFuncs_EmoteSleeping,
 };
 
 u8 (*const gMovementActionFuncs_FaceDown[])(struct ObjectEvent *, struct Sprite *) = {
@@ -1531,5 +1534,10 @@ u8 (*const gMovementActionFuncs_EmoteX[])(struct ObjectEvent *, struct Sprite *)
 
 u8 (*const gMovementActionFuncs_EmoteDoubleExclMark[])(struct ObjectEvent *, struct Sprite *) = {
     MovementAction_EmoteDoubleExclamationMark_Step0,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_EmoteSleeping[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteSleeping_Step0,
     MovementAction_Finish,
 };
