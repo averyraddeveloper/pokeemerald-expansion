@@ -68,6 +68,7 @@
 #include "constants/metatile_labels.h"
 #include "palette.h"
 #include "battle_util.h"
+#include "naming_screen.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -4291,4 +4292,9 @@ void PreparePartyForSkyBattle(void)
     }
     VarSet(B_VAR_SKY_BATTLE,participatingPokemonSlot);
     CompactPartySlots();
+}
+
+void PlayerNamingScreen(void)
+{
+    DoNamingScreen(NAMING_SCREEN_PLAYER, gSaveBlock2Ptr->playerName, 0, 0, 0, CB2_ReturnToFieldContinueScript);
 }
