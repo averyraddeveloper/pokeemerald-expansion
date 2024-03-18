@@ -1,0 +1,96 @@
+mapscripts VaultPlayerBedroom_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [ 
+        VAR_TEMP_0, 0: VaultPlayerBedroom_EventScript_OpeningSequenceCheck
+    ]
+}
+
+script VaultPlayerBedroom_EventScript_OpeningSequenceCheck {
+    if (flag(FLAG_SET_WALL_CLOCK) == FALSE) {
+        goto(VaultPlayerBedroom_EventScript_OpeningSequence)
+    }
+}
+
+script VaultPlayerBedroom_EventScript_OpeningSequence {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    #applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Sleeping)
+    playse(SE_UNLOCK)
+    applymovement(1, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)
+    applymovement(1, FriendEnters)
+    waitmovement(0)
+    msgbox(format("Did you fall asleep at your computer again?!\l"
+                    "...\N"
+                    "Don't you know today is the big day? The day we've all been waiting for, finally we can leave! The scientists have given the all clear, and I can't wait to get out of this stuffy vault.\l"
+                    "You should finish your work, and come join the festivities. Remember to sign and date it!"
+                    ))
+    applymovement(1, FriendLeaves)
+    waitmovement(0)
+    removeobject(1)
+    setflag(FLAG_SET_WALL_CLOCK)
+    playse(SE_EXIT)
+    fadescreen(FADE_TO_BLACK)
+    goto(VaultPlayerBedroom_EventScript_ContinueOpening)
+    releaseall
+}
+movement FriendEnters {
+    walk_down * 2
+}
+movement FriendLeaves {
+    face_up
+    walk_up * 2
+}
+
+script VaultPlayerBedroom_EventScript_ContinueOpening {
+    lockall
+    fadescreen(FADE_FROM_BLACK)
+    random(7)
+    switch (var(VAR_RESULT)) {
+        case 0: msgbox(format("“...and thus concluding that Pidgey feathers possess an aerodynamic advantage over Swablu feathers in simulated wind tunnel tests.”"))
+        case 1: msgbox(format("“...and thus demonstrating that Magikarp's splashing behavior has a negligible impact on water quality within aquarium environments.”"))
+        case 2: msgbox(format("“...and thus illustrating the inefficacy of Slowpoke tails as a suitable substitute for building material in architectural engineering.”"))
+        case 3: msgbox(format("“...and thus, it is proven that Yache Berries are not a suitable whole meal replacement.”"))
+        case 4: msgbox(format("“...and thus proposing that the spatial distortion caused by Ultra Wormholes may provide a means for interdimensional communication, subject to further investigation.”"))
+        case 5: msgbox(format("“...and thus suggesting that the migratory patterns of Wingull are influenced by geomagnetic anomalies rather than seasonal changes in climate.”"))
+        case 6: msgbox(format("“...and thus highlighting the symbiotic relationship between Corsola colonies and coral reef ecosystems, underscoring the importance of conservation efforts in marine biodiversity hotspots.”"))
+    }
+    msgbox(format("SIGNED: ..."))
+    special(PlayerNamingScreen)
+    waitstate
+    msgbox(format("{PLAYER}, is that it?"))
+    dynmultichoice(3, 3, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+    if(var(VAR_RESULT) == 0) {
+        goto(VaultPlayerBedroom_EventScript_AcceptName)
+    } elif (var(VAR_RESULT) == 1) {
+        goto(VaultPlayerBedroom_EventScript_RetryName)
+    }
+    releaseall
+}
+
+script VaultPlayerBedroom_EventScript_RetryName {
+    special(PlayerNamingScreen)
+    waitstate
+    msgbox(format("{PLAYER}, is that it?"))
+    dynmultichoice(3, 3, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+    if(var(VAR_RESULT) == 0) {
+        goto(VaultPlayerBedroom_EventScript_AcceptName)
+    } elif (var(VAR_RESULT) == 1) {
+        goto(VaultPlayerBedroom_EventScript_RetryName)
+    }
+}
+
+script VaultPlayerBedroom_EventScript_AcceptName {
+    msgbox(format("SIGNED: {PLAYER} at TIME: ..."))
+    special(StartWallClock)
+    waitstate
+    gettime
+    buffernumberstring(STR_VAR_1, VAR_0x8000)
+    buffernumberstring(STR_VAR_2, VAR_0x8001)
+    msgbox(format("SIGNED: {PLAYER} at TIME: {STR_VAR_1}:{STR_VAR_2}"))
+    msgbox(format("Now that I am finished, I should get changed and go join everyone."))
+    setvar(VAR_TEMP_0, 1)
+    releaseall
+    end
+}

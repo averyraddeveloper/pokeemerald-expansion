@@ -4425,7 +4425,7 @@
       "id": "LAYOUT_VAULT_PLAYER_BEDROOM",
       "name": "VaultPlayerBedroom_Layout",
       "width": 10,
-      "height": 8,
+      "height": 7,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/VaultPlayerBedroom/border.bin",
