@@ -91,7 +91,7 @@ static void InitPlayerTrainerId(void)
 // L=A isnt set here for some reason.
 static void SetDefaultOptions(void)
 {
-    gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_MID;
+    gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_FAST;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
     gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_MONO;
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
@@ -133,7 +133,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToStartingLocation(void)
 {
-    SetWarpDestination(MAP_GROUP(VAULT), MAP_NUM(VAULT), WARP_ID_NONE, 3, 3);
+    SetWarpDestination(MAP_GROUP(VAULT_PLAYER_BEDROOM), MAP_NUM(VAULT_PLAYER_BEDROOM), WARP_ID_NONE, 7, 5);
     WarpIntoMap();
 }
 
@@ -165,7 +165,6 @@ void NewGameInitData(void)
     ResetPokedex();
     ClearFrontierRecord();
     ClearSav1();
-    ClearSav3();
     ClearAllMail();
     gSaveBlock2Ptr->specialSaveWarpFlags = 0;
     gSaveBlock2Ptr->gcnLinkFlags = 0;
