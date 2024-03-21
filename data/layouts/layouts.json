@@ -4450,6 +4450,16 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/VaultCorridor/border.bin",
       "blockdata_filepath": "data/layouts/VaultCorridor/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKY_RUINS",
+      "name": "RockyRuins_Layout",
+      "width": 30,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/RockyRuins/border.bin",
+      "blockdata_filepath": "data/layouts/RockyRuins/map.bin"
     }
   ]
 }

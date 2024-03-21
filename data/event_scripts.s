@@ -1080,3 +1080,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PorytilesTestMap/scripts.inc"
 
 	.include "data/maps/VaultCorridor/scripts.inc"
+
+	.include "data/maps/RockyRuins/scripts.inc"
