@@ -1,0 +1,48 @@
+mapscripts VaultCorridor_MapScripts {
+}
+
+script VaultCorridor_EventScript_OldMan {
+    lock
+    faceplayer
+    if (var(VAR_TEMP_0) == 0) {
+        msgbox(format("My grandfather used to tell me stories about when they first entered this place."))
+        setvar(VAR_TEMP_0, 1)
+        release
+        end
+    }
+    elif (var(VAR_TEMP_0) == 1) {
+        msgbox(format("He was only 26 years old when they shut the doors."))
+        release
+        end
+    }
+    
+}
+
+script VaultCorridor_EventScript_Scientist1 {
+    lock
+    faceplayer
+    if (var(VAR_TEMP_1) == 0) {
+        msgbox(format("We have all been anticipating this day for quite some time."))
+        setvar(VAR_TEMP_1, 1)
+        release
+        end
+    }
+    elif (var(VAR_TEMP_1) == 1){
+        msgbox(format("After weeks of sustained low levels of radiation, it is finally safe to exit."))
+        release
+        end
+    }
+    
+}
+
+script VaultCorridor_EventScript_GoToTheParty {
+    lock
+    msgbox(format("I should go join everyone downstairs."))
+    waitmessage
+    applymovement(OBJ_EVENT_ID_PLAYER, GoToTheParty)
+    waitmovement(0)
+    release
+}
+movement GoToTheParty {
+    walk_left * 2
+}

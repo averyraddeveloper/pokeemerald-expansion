@@ -12,18 +12,52 @@ script VaultPlayerBedroom_EventScript_OpeningSequenceCheck {
 
 script VaultPlayerBedroom_EventScript_OpeningSequence {
     lockall
+    hideobjectat(1, MAP_VAULT_PLAYER_BEDROOM)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
-    #applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Sleeping)
-    playse(SE_UNLOCK)
-    applymovement(1, Common_Movement_ExclamationMark)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
     waitmovement(0)
-    applymovement(1, Common_Movement_Delay48)
+    applymovement(1, FriendEnters) # moves Friend from outside map to doorway
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Sleeping)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    msgbox(format("Z...\N"
+                    "Z...\N"
+                    "Z..."))
+    waitmessage
+    fadescreenspeed(FADE_TO_BLACK, 8)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    fadescreenspeed(FADE_FROM_BLACK, 8)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Sleeping)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    fadescreenspeed(FADE_TO_BLACK, 16)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    showobjectat(1, MAP_VAULT_PLAYER_BEDROOM)
+    playse(SE_UNLOCK)
+    closemessage
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    applymovement(1, Common_Movement_ExclamationMark)
     waitmovement(0)
     applymovement(1, FriendEnters)
     waitmovement(0)
     msgbox(format("Did you fall asleep at your computer again?!\l"
                     "...\N"
-                    "Don't you know today is the big day? The day we've all been waiting for, finally we can leave! The scientists have given the all clear, and I can't wait to get out of this stuffy vault.\l"
+                    "Don't you know today is the big day? The day we've all been waiting for. The scientists have given the all clear, and I am so excited to finally get out of this stuffy vault.\l"
                     "You should finish your work, and come join the festivities. Remember to sign and date it!"
                     ))
     applymovement(1, FriendLeaves)
